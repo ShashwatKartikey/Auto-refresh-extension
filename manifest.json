@@ -1,0 +1,24 @@
+{
+   "background": {
+      "persistent": false,
+      "scripts": [ "background.js" ]
+   },
+   "browser_action": {
+      "default_popup": "popup.html"
+   },
+   "content_scripts": [ {
+      "js": [ "lib/js/jquery.min.js", "contentScript.js" ],
+      "matches": [ "https://*/*", "http://*/*" ],
+      "run_at": "document_idle"
+   } ],
+   "description": "Auto refresh",
+   "icons": {
+      "128": "icon.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiEfZvY+xwSqN4wJLa4Y5CvmPgeRuR22v+06+su9lvW+OEZkqpnV6XuR5HFjZUAJN0G6BwvNr91iaGzOZWskJ36uZmkyQ4tkisHIrf+WqEJwFW+KRlfMO/PF4ksG7BbF1DxLXQUNgzBY951EMYcws2RA9r16/4TYV7siOMjY5RJJElweLg3wiN5hSCg4RmIT2bb5pNAWtueSy+wRC/FctK64CMNYajGnKPjoIz2MKAYfOOdipcVosaTPI3W1d+Xj6rJj7tyFDA07vOJ6eF0vrvZuJjrbcTG/vfuH8j9PLPzxDAF1JhNrv8Z4NgpIaHLxEfwky3l9WFPBm+wrEldfbmwIDAQAB",
+   "manifest_version": 2,
+   "name": "Auto Refresh With Notifications",
+   "permissions": [ "tts", "activeTab", "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.0.4"
+}

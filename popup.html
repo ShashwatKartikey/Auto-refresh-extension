@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart Ready</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <script type="text/javascript" src="lib/js/jquery.min.js"></script>
+    <script type="text/javascript" src="popup.js"></script>
+    <style>
+        body {
+            width: 340px;
+            text-align: center;
+            padding: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 0;
+            line-height: 1.3;
+        }
+        .hint {
+            font-size: 10pt;
+            color: gray;
+        }
+        .before {
+            font-size: 10pt;
+            color: red;
+            margin: 0.5em 0;
+        }
+        input[type='checkbox'] {
+
+        }
+        button {
+            width: 80px;
+        }
+        #advanced_options {
+            display: none;
+        }
+        button:disabled {
+            cursor: not-allowed;
+            pointer-events: all !important;
+        }
+        #err {
+            font-size: 10pt;
+            margin: 0.5em 0;
+            font-weight: bold;
+        }
+        div.form-group {
+            margin-bottom: 0.25em;
+        }
+        .btns {
+            margin-bottom: 0.5em;
+        }
+        .version {
+            float: right;
+            color: gray;
+        }
+    </style>
+</head>
+<body class="text-left">
+    <h5>Auto Refresh With Notifications</h5>
+    <p class="before">
+        <span>Please turn on your speaker, turn off screen saver and prevent your PC from sleeping.</span>
+    </p>
+    <p class="d-flex justify-content-between btns">
+        <button class="btn btn-primary flex-fill" id="start">Start</button>
+        <span>&nbsp;&nbsp;&nbsp;</span>
+        <button class="btn btn-danger flex-fill" id="stop">Stop</button>
+<!--        <button class="btn btn-warning" id="mute">Mute</button>-->
+    </p>
+    <p class="text-danger" id="err"></p>
+    <div class="form-group">
+        <label>
+            URL<input type="text" id="url" class="form-control" disabled>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            Refresh Interval
+            <input type="number" id="interval" class="form-control" value="10" min="1">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            Stop When Page <b>Excludes</b> <br>
+            <span class="hint"> * multiple texts separated by semicolon ;</span><br>
+            <input type="text" id="excludes" class="form-control">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            Notification Text</b><input type="text" id="notification" class="form-control">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            Advanced Options
+            <input type="checkbox" id="advanced">
+            <span class="version">v0.0.4</span>
+        </label>
+    </div>
+    <div id="advanced_options">
+        <hr>
+        <div class="form-group">
+            <label>
+                Stop When Page <b>Includes</b><br>
+                <span class="hint"> * multiple texts separated by semicolon ;</span><br>
+                <input type="text" id="includes" class="form-control">
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                Lock Current URL In Tab.
+                <br>
+                <span class="hint"> * Notification When URL Changes</span>
+                <input type="checkbox" id="lockUrl" checked>
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                Click Button Before Check Page<br>
+                <span class="hint"> * enter button text</span><br>
+                <span class="hint"> * multiple texts separated by semicolon ;</span>
+                <input type="text" id="clickBefore" class="form-control">
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                Click Button After Refresh Stop<br>
+                <span class="hint"> * enter button text</span><br>
+                <span class="hint"> * multiple texts separated by semicolon ;</span>
+                <input type="text" id="clickAfter" class="form-control">
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                Select Notification Voice
+                <select id="voices" class="form-control"></select>
+            </label>
+        </div>
+    </div>
+</body>
+</html>
